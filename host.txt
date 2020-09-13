@@ -1,0 +1,685 @@
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.19.127-v7l (builder@5b2a75c8ae39) (gcc version 9.3.0 (Buildroot 2020.02.4-g5fdcf8b2)) #1 SMP Wed Sep 9 01:38:15 UTC 2020
+[    0.000000] CPU: ARMv7 Processor [410fd083] revision 3 (ARMv7), cr=30c5383d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] OF: fdt: Machine model: Raspberry Pi 4 Model B Rev 1.2
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] cma: Reserved 64 MiB at 0x0000000037400000
+[    0.000000] On node 0 totalpages: 504832
+[    0.000000]   DMA zone: 1728 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 196608 pages, LIFO batch:63
+[    0.000000]   HighMem zone: 308224 pages, LIFO batch:63
+[    0.000000] random: get_random_bytes called from start_kernel+0xc0/0x4f4 with crng_init=0
+[    0.000000] percpu: Embedded 17 pages/cpu s36940 r8192 d24500 u69632
+[    0.000000] pcpu-alloc: s36940 r8192 d24500 u69632 alloc=17*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 503104
+[    0.000000] Kernel command line: zram.enabled=1 zram.num_devices=3 apparmor=1 security=apparmor rootwait systemd.machine_id=70c04ec918f34df992c653286582305c cgroup_enable=memory coherent_pool=1M 8250.nr_uarts=0 cma=64M bcm2708_fb.fbwidth=0 bcm2708_fb.fbheight=0 bcm2708_fb.fbswap=1 smsc95xx.macaddr=DC:A6:32:B7:7A:14 vc_mem.mem_base=0x3ec00000 vc_mem.mem_size=0x40000000  dwc_otg.lpm_enable=0 console=tty1 root=PARTUUID=a3ec664e-32ce-4665-95ea-7ae90ce9aa20 rootfstype=squashfs ro rauc.slot=B
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 1916792K/2019328K available (10240K kernel code, 736K rwdata, 2716K rodata, 2048K init, 877K bss, 37000K reserved, 65536K cma-reserved, 1167360K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xf0800000 - 0xff800000   ( 240 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xf0000000   ( 768 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0x(ptrval) - 0x(ptrval)   (12256 kB)
+[    0.000000]       .init : 0x(ptrval) - 0x(ptrval)   (2048 kB)
+[    0.000000]       .data : 0x(ptrval) - 0x(ptrval)   ( 737 kB)
+[    0.000000]        .bss : 0x(ptrval) - 0x(ptrval)   ( 878 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] ftrace: allocating 32798 entries in 97 pages
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] arch_timer: cp15 timer(s) running at 54.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0xc743ce346, max_idle_ns: 440795203123 ns
+[    0.000005] sched_clock: 56 bits at 54MHz, resolution 18ns, wraps every 4398046511102ns
+[    0.000022] Switching to timer-based delay loop, resolution 18ns
+[    0.000258] Console: colour dummy device 80x30
+[    0.000733] console [tty1] enabled
+[    0.000788] Calibrating delay loop (skipped), value calculated using timer frequency.. 108.00 BogoMIPS (lpj=540000)
+[    0.000825] pid_max: default: 32768 minimum: 301
+[    0.000963] Security Framework initialized
+[    0.001053] AppArmor: AppArmor initialized
+[    0.001247] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.001279] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.002072] CPU: Testing write buffer coherency: ok
+[    0.002504] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.003161] Setting up static identity map for 0x200000 - 0x20003c
+[    0.003337] rcu: Hierarchical SRCU implementation.
+[    0.004219] smp: Bringing up secondary CPUs ...
+[    0.005100] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.006072] CPU2: thread -1, cpu 2, socket 0, mpidr 80000002
+[    0.007007] CPU3: thread -1, cpu 3, socket 0, mpidr 80000003
+[    0.007126] smp: Brought up 1 node, 4 CPUs
+[    0.007194] SMP: Total of 4 processors activated (432.00 BogoMIPS).
+[    0.007217] CPU: All CPU(s) started in HYP mode.
+[    0.007237] CPU: Virtualization extensions available.
+[    0.008039] devtmpfs: initialized
+[    0.019367] VFP support v0.3: implementor 41 architecture 3 part 40 variant 8 rev 0
+[    0.019604] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.019646] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.021586] pinctrl core: initialized pinctrl subsystem
+[    0.022405] NET: Registered protocol family 16
+[    0.025682] DMA: preallocated 1024 KiB pool for atomic coherent allocations
+[    0.026199] audit: initializing netlink subsys (disabled)
+[    0.026454] audit: type=2000 audit(0.020:1): state=initialized audit_enabled=0 res=1
+[    0.027533] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.027567] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.027766] Serial: AMBA PL011 UART driver
+[    0.030885] bcm2835-mbox fe00b880.mailbox: mailbox enabled
+[    0.050004] raspberrypi-firmware soc:firmware: Attached to firmware from 2020-06-01 13:23, variant start
+[    0.060020] raspberrypi-firmware soc:firmware: Firmware hash is 6379679d1ec6a8c746d7e77e015f5b56b939976f
+[    0.104398] bcm2835-dma fe007000.dma: DMA legacy API manager at (ptrval), dmachans=0x1
+[    0.107372] vgaarb: loaded
+[    0.107732] SCSI subsystem initialized
+[    0.107943] usbcore: registered new interface driver usbfs
+[    0.108011] usbcore: registered new interface driver hub
+[    0.108122] usbcore: registered new device driver usb
+[    0.108184] media: Linux media interface: v0.10
+[    0.108235] videodev: Linux video capture interface: v2.00
+[    0.109672] clocksource: Switched to clocksource arch_sys_counter
+[    0.192212] VFS: Disk quotas dquot_6.6.0
+[    0.192318] VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.192477] FS-Cache: Loaded
+[    0.192670] CacheFiles: Loaded
+[    0.193322] AppArmor: AppArmor Filesystem Enabled
+[    0.203085] NET: Registered protocol family 2
+[    0.203749] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes)
+[    0.203796] TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.203864] TCP bind hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.203942] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.204081] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    0.204125] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    0.204339] NET: Registered protocol family 1
+[    0.204898] RPC: Registered named UNIX socket transport module.
+[    0.204925] RPC: Registered udp transport module.
+[    0.204946] RPC: Registered tcp transport module.
+[    0.204967] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.204995] PCI: CLS 0 bytes, default 64
+[    0.206513] hw perfevents: enabled with armv7_cortex_a15 PMU driver, 7 counters available
+[    0.208622] Initialise system trusted keyrings
+[    0.208836] workingset: timestamp_bits=14 max_order=19 bucket_order=5
+[    0.218364] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.218604] FS-Cache: Netfs 'nfs' registered for caching
+[    0.219135] NFS: Registering the id_resolver key type
+[    0.219174] Key type id_resolver registered
+[    0.219197] Key type id_legacy registered
+[    0.219228] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.224558] Key type asymmetric registered
+[    0.224587] Asymmetric key parser 'x509' registered
+[    0.224711] bounce: pool size: 64 pages
+[    0.224763] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+[    0.224953] io scheduler noop registered
+[    0.224978] io scheduler deadline registered
+[    0.225144] io scheduler cfq registered (default)
+[    0.225168] io scheduler mq-deadline registered
+[    0.225190] io scheduler kyber registered
+[    0.227742] brcm-pcie fd500000.pcie: could not get clock
+[    0.227816] brcm-pcie fd500000.pcie: host bridge /scb/pcie@7d500000 ranges:
+[    0.227867] brcm-pcie fd500000.pcie:   MEM 0x600000000..0x603ffffff -> 0xf8000000
+[    0.279732] brcm-pcie fd500000.pcie: link up, 5.0 Gbps x1 (!SSC)
+[    0.280000] brcm-pcie fd500000.pcie: PCI host bridge to bus 0000:00
+[    0.280031] pci_bus 0000:00: root bus resource [bus 00-01]
+[    0.280060] pci_bus 0000:00: root bus resource [mem 0x600000000-0x603ffffff] (bus address [0xf8000000-0xfbffffff])
+[    0.280123] pci 0000:00:00.0: [14e4:2711] type 01 class 0x060400
+[    0.280261] pci 0000:00:00.0: PME# supported from D0 D3hot
+[    0.282995] PCI: bus0: Fast back to back transfers disabled
+[    0.283027] pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    0.283251] pci 0000:01:00.0: [1106:3483] type 00 class 0x0c0330
+[    0.283376] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x00000fff 64bit]
+[    0.283693] pci 0000:01:00.0: PME# supported from D0 D3cold
+[    0.286441] PCI: bus1: Fast back to back transfers disabled
+[    0.286472] pci_bus 0000:01: busn_res: [bus 01] end is updated to 01
+[    0.286517] pci 0000:00:00.0: BAR 8: assigned [mem 0x600000000-0x6000fffff]
+[    0.286551] pci 0000:01:00.0: BAR 0: assigned [mem 0x600000000-0x600000fff 64bit]
+[    0.286638] pci 0000:00:00.0: PCI bridge to [bus 01]
+[    0.286668] pci 0000:00:00.0:   bridge window [mem 0x600000000-0x6000fffff]
+[    0.286903] pcieport 0000:00:00.0: enabling device (0140 -> 0142)
+[    0.287082] pcieport 0000:00:00.0: Signaling PME with IRQ 50
+[    0.287266] pcieport 0000:00:00.0: AER enabled with IRQ 50
+[    0.287452] pci 0000:01:00.0: enabling device (0140 -> 0142)
+[    0.287983] bcm2708_fb soc:fb: Unable to determine number of FB's. Assuming 1
+[    0.288012] bcm2708_fb soc:fb: FB found 1 display(s)
+[    0.288370] raspberrypi-firmware soc:firmware: Request 0x00048003 returned status 0x80000001
+[    0.288405] bcm2708_fb soc:fb: Failed to allocate GPU framebuffer (-22)
+[    0.288459] bcm2708_fb soc:fb: probe failed, err -22
+[    0.288493] bcm2708_fb: probe of soc:fb failed with error -22
+[    0.294105] iproc-rng200 fe104000.rng: hwrng registered
+[    0.294321] vc-mem: phys_addr:0x00000000 mem_base=0x3ec00000 mem_size:0x40000000(1024 MiB)
+[    0.294831] vc-sm: Videocore shared memory driver
+[    0.295213] gpiomem-bcm2835 fe200000.gpiomem: Initialised: Registers at 0xfe200000
+[    0.305311] brd: module loaded
+[    0.314968] loop: module loaded
+[    0.315541] zram: Added device: zram0
+[    0.316068] zram: Added device: zram1
+[    0.316576] zram: Added device: zram2
+[    0.317301] Loading iSCSI transport class v2.0-870.
+[    0.318952] libphy: Fixed MDIO Bus: probed
+[    0.319002] tun: Universal TUN/TAP device driver, 1.6
+[    0.319544] bcmgenet fd580000.genet: failed to get enet clock
+[    0.319575] bcmgenet fd580000.genet: GENET 5.0 EPHY: 0x0000
+[    0.319605] bcmgenet fd580000.genet: failed to get enet-wol clock
+[    0.319634] bcmgenet fd580000.genet: failed to get enet-eee clock
+[    0.319704] bcmgenet: Skipping UMAC reset
+[    0.319952] unimac-mdio unimac-mdio.-19: DMA mask not set
+[    0.339699] libphy: bcmgenet MII bus: probed
+[    0.380412] unimac-mdio unimac-mdio.-19: Broadcom UniMAC MDIO bus at 0x(ptrval)
+[    0.381333] usbcore: registered new interface driver r8152
+[    0.381415] usbcore: registered new interface driver lan78xx
+[    0.381731] xhci_hcd 0000:01:00.0: xHCI Host Controller
+[    0.381777] xhci_hcd 0000:01:00.0: new USB bus registered, assigned bus number 1
+[    0.384076] xhci_hcd 0000:01:00.0: hcc params 0x002841eb hci version 0x100 quirks 0x0000001000000890
+[    0.384426] genirq: irq_chip Brcm_MSI did not update eff. affinity mask of irq 51
+[    0.385291] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 4.19
+[    0.385326] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.385355] usb usb1: Product: xHCI Host Controller
+[    0.385379] usb usb1: Manufacturer: Linux 4.19.127-v7l xhci-hcd
+[    0.385403] usb usb1: SerialNumber: 0000:01:00.0
+[    0.385929] hub 1-0:1.0: USB hub found
+[    0.386022] hub 1-0:1.0: 1 port detected
+[    0.386508] xhci_hcd 0000:01:00.0: xHCI Host Controller
+[    0.386544] xhci_hcd 0000:01:00.0: new USB bus registered, assigned bus number 2
+[    0.386581] xhci_hcd 0000:01:00.0: Host supports USB 3.0 SuperSpeed
+[    0.386994] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 4.19
+[    0.387026] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.387054] usb usb2: Product: xHCI Host Controller
+[    0.387077] usb usb2: Manufacturer: Linux 4.19.127-v7l xhci-hcd
+[    0.387100] usb usb2: SerialNumber: 0000:01:00.0
+[    0.387595] hub 2-0:1.0: USB hub found
+[    0.387676] hub 2-0:1.0: 4 ports detected
+[    0.388867] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+[    0.389062] dwc_otg: FIQ enabled
+[    0.389071] dwc_otg: NAK holdoff enabled
+[    0.389080] dwc_otg: FIQ split-transaction FSM enabled
+[    0.389092] Module dwc_common_port init
+[    0.389432] usbcore: registered new interface driver uas
+[    0.389543] usbcore: registered new interface driver usb-storage
+[    0.389694] usbcore: registered new interface driver usbserial_generic
+[    0.389743] usbserial: USB Serial support registered for generic
+[    0.389943] mousedev: PS/2 mouse device common for all mice
+[    0.391048] bcm2835-wdt bcm2835-wdt: Broadcom BCM2835 watchdog timer
+[    0.392664] sdhci: Secure Digital Host Controller Interface driver
+[    0.392689] sdhci: Copyright(c) Pierre Ossman
+[    0.393075] mmc-bcm2835 fe300000.mmcnr: could not get clk, deferring probe
+[    0.393460] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.399802] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.399873] hidraw: raw HID events driver (C) Jiri Kosina
+[    0.399938] usbcore: registered new interface driver usbhid
+[    0.399948] usbhid: USB HID core driver
+[    0.400372] vchiq: vchiq_init_state: slot_zero = (ptrval), is_master = 0
+[    0.401366] [vc_sm_connected_init]: start
+[    0.407160] [vc_sm_connected_init]: end - returning 0
+[    0.407887] IPVS: Registered protocols (TCP, UDP, SCTP, AH, ESP)
+[    0.407914] IPVS: Connection hash table configured (size=4096, memory=32Kbytes)
+[    0.408157] IPVS: ipvs loaded.
+[    0.408168] IPVS: [rr] scheduler registered.
+[    0.408748] NET: Registered protocol family 10
+[    0.409275] Segment Routing with IPv6
+[    0.409329] NET: Registered protocol family 17
+[    0.409365] Bridge firewalling registered
+[    0.409404] Key type dns_resolver registered
+[    0.409618] Registering SWP/SWPB emulation handler
+[    0.409925] registered taskstats version 1
+[    0.409941] Loading compiled-in X.509 certificates
+[    0.409980] AppArmor: AppArmor sha1 policy hashing enabled
+[    0.413083] uart-pl011 fe201000.serial: cts_event_workaround enabled
+[    0.413137] fe201000.serial: ttyAMA0 at MMIO 0xfe201000 (irq = 34, base_baud = 0) is a PL011 rev2
+[    0.416920] bcm2835-power bcm2835-power: Broadcom BCM2835 power domains driver
+[    0.417212] brcmstb_thermal fd5d2200.thermal: registered AVS TMON of-sensor driver
+[    0.418840] mmc-bcm2835 fe300000.mmcnr: mmc_debug:0 mmc_debug2:0
+[    0.418857] mmc-bcm2835 fe300000.mmcnr: DMA channel allocated
+[    0.442840] sdhci-iproc fe340000.emmc2: Linked as a consumer to regulator.3
+[    0.442948] sdhci-iproc fe340000.emmc2: Linked as a consumer to regulator.4
+[    0.460325] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    0.461937] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    0.463561] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    0.466376] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    0.467948] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    0.476078] mmc0: SDHCI controller on fe340000.emmc2 [fe340000.emmc2] using ADMA
+[    0.478148] console [netcon0] enabled
+[    0.478166] netconsole: network logging started
+[    0.478183] of_cfs_init
+[    0.478258] of_cfs_init: OK
+[    0.478731] Waiting for root device PARTUUID=a3ec664e-32ce-4665-95ea-7ae90ce9aa20...
+[    0.519794] random: fast init done
+[    0.534662] mmc1: new high speed SDIO card at address 0001
+[    0.578818] mmc0: new ultra high speed DDR50 SDHC card at address aaaa
+[    0.579443] mmcblk0: mmc0:aaaa SH32G 29.7 GiB
+[    0.584224]  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8
+[    0.591745] VFS: Mounted root (squashfs filesystem) readonly on device 179:5.
+[    0.593137] devtmpfs: mounted
+[    0.596586] Freeing unused kernel memory: 2048K
+[    0.639967] Run /sbin/init as init process
+[    0.749714] usb 1-1: new high-speed USB device number 2 using xhci_hcd
+[    0.823413] systemd[1]: System time before build time, advancing clock.
+[    0.840575] systemd[1]: systemd 244 running in system mode. (+PAM -AUDIT -SELINUX -IMA -APPARMOR -SMACK +SYSVINIT +UTMP -LIBCRYPTSETUP +GCRYPT -GNUTLS -ACL -XZ -LZ4 -SECCOMP +BLKID -ELFUTILS +KMOD -IDN2 -IDN -PCRE2 default-hierarchy=hybrid)
+[    0.841063] systemd[1]: Detected architecture arm.
+[    0.851710] systemd[1]: Set hostname to <homeassistant>.
+[    0.851930] systemd[1]: Installed transient /etc/machine-id file.
+[    0.942044] usb 1-1: New USB device found, idVendor=2109, idProduct=3431, bcdDevice= 4.21
+[    0.942072] usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    0.942102] usb 1-1: Product: USB2.0 Hub
+[    0.943774] hub 1-1:1.0: USB hub found
+[    0.944068] hub 1-1:1.0: 4 ports detected
+[    1.003072] systemd[1]: /usr/lib/systemd/system/docker.socket:6: ListenStream= references a path below legacy directory /var/run/, updating /var/run/docker.sock → /run/docker.sock; please update the unit file accordingly.
+[    1.023365] systemd[1]: /usr/lib/systemd/system/dbus.socket:5: ListenStream= references a path below legacy directory /var/run/, updating /var/run/dbus/system_bus_socket → /run/dbus/system_bus_socket; please update the unit file accordingly.
+[    1.109093] random: systemd: uninitialized urandom read (16 bytes read)
+[    1.111915] systemd[1]: Created slice system-getty.slice.
+[    1.112252] random: systemd: uninitialized urandom read (16 bytes read)
+[    1.112389] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    1.112599] random: systemd: uninitialized urandom read (16 bytes read)
+[    1.112727] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    1.113043] systemd[1]: Reached target HassOS zram targets.
+[    1.113237] systemd[1]: Reached target Paths.
+[    1.113408] systemd[1]: Reached target Remote File Systems.
+[    1.113574] systemd[1]: Reached target Slices.
+[    1.116455] systemd[1]: Listening on Process Core Dump Socket.
+[    1.116786] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[    1.117311] systemd[1]: Listening on Journal Audit Socket.
+[    1.117714] systemd[1]: Listening on Journal Socket (/dev/log).
+[    1.118174] systemd[1]: Listening on Journal Socket.
+[    1.118608] systemd[1]: Listening on udev Control Socket.
+[    1.118935] systemd[1]: Listening on udev Kernel Socket.
+[    1.119353] systemd[1]: Condition check resulted in Huge Pages File System being skipped.
+[    1.122303] systemd[1]: Mounting POSIX Message Queue File System...
+[    1.126076] systemd[1]: Mounting Kernel Debug File System...
+[    1.131106] systemd[1]: Starting Create list of static device nodes for the current kernel...
+[    1.136634] systemd[1]: Starting Journal Service...
+[    1.140222] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    1.143972] systemd[1]: Starting Wait Until Kernel Time Synchronized...
+[    1.148055] systemd[1]: Starting udev Coldplug all Devices...
+[    1.152158] systemd[1]: Starting HassOS ZRAM swap...
+[    1.156112] systemd[1]: Starting HassOS ZRAM tmp...
+[    1.160285] systemd[1]: Starting HassOS ZRAM var...
+[    1.165151] systemd[1]: Mounted POSIX Message Queue File System.
+[    1.165944] systemd[1]: Mounted Kernel Debug File System.
+[    1.169173] systemd[1]: Started Create list of static device nodes for the current kernel.
+[    1.172563] systemd[1]: Started Remount Root and Kernel File Systems.
+[    1.176720] systemd[1]: Starting Create Static Device Nodes in /dev...
+[    1.200721] zram1: detected capacity change from 0 to 33554432
+[    1.201778] zram0: detected capacity change from 0 to 508002304
+[    1.203598] zram2: detected capacity change from 0 to 16777216
+[    1.209195] systemd[1]: Started Create Static Device Nodes in /dev.
+[    1.210586] systemd[1]: Reached target Local File Systems (Pre).
+[    1.214477] systemd[1]: Starting udev Kernel Device Manager...
+[    1.217452] systemd[1]: Started Journal Service.
+[    1.269721] usb 1-1.3: new full-speed USB device number 3 using xhci_hcd
+[    1.391230] vc_sm_cma: module is from the staging directory, the quality is unknown, you have been warned.
+[    1.392213] bcm2835_vc_sm_cma_probe: Videocore shared memory driver
+[    1.392243] [vc_sm_connected_init]: start
+[    1.393805] rpivid-mem feb00000.hevc-decoder: rpivid-hevcmem initialised: Registers at 0xfeb00000 length 0x0000ffff
+[    1.394187] rpivid-mem feb10000.rpivid-local-intc: rpivid-intcmem initialised: Registers at 0xfeb10000 length 0x00000fff
+[    1.394363] [vc_sm_connected_init]: installed successfully
+[    1.394679] rpivid-mem feb20000.h264-decoder: rpivid-h264mem initialised: Registers at 0xfeb20000 length 0x0000ffff
+[    1.396937] rpivid-mem feb30000.vp9-decoder: rpivid-vp9mem initialised: Registers at 0xfeb30000 length 0x0000ffff
+[    1.410797] usb 1-1.3: New USB device found, idVendor=1cf1, idProduct=0030, bcdDevice= 1.00
+[    1.410822] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    1.410836] usb 1-1.3: Product: ConBee II
+[    1.410854] usb 1-1.3: Manufacturer: dresden elektronik ingenieurtechnik GmbH
+[    1.410870] usb 1-1.3: SerialNumber: DE2191372
+[    1.417649] bcm2835_mmal_vchiq: module is from the staging directory, the quality is unknown, you have been warned.
+[    1.418694] bcm2835_mmal_vchiq: module is from the staging directory, the quality is unknown, you have been warned.
+[    1.425388] bcm2835_v4l2: module is from the staging directory, the quality is unknown, you have been warned.
+[    1.429127] bcm2835_codec: module is from the staging directory, the quality is unknown, you have been warned.
+[    1.452283] bcm2835-codec bcm2835-codec: Device registered as /dev/video10
+[    1.452310] bcm2835-codec bcm2835-codec: Loaded V4L2 decode
+[    1.456760] bcm2835-codec bcm2835-codec: Device registered as /dev/video11
+[    1.456800] bcm2835-codec bcm2835-codec: Loaded V4L2 encode
+[    1.462794] bcm2835-codec bcm2835-codec: Device registered as /dev/video12
+[    1.462822] bcm2835-codec bcm2835-codec: Loaded V4L2 isp
+[    1.465039] snd_bcm2835: module is from the staging directory, the quality is unknown, you have been warned.
+[    1.475177] bcm2835_audio soc:audio: card created with 8 channels
+[    1.525736] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    1.558048] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    1.639270] brcmfmac: F1 signature read @0x18000000=0x15264345
+[    1.649848] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+[    1.650109] usbcore: registered new interface driver brcmfmac
+[    1.680750] cdc_acm 1-1.3:1.0: ttyACM0: USB ACM device
+[    1.682300] usbcore: registered new interface driver cdc_acm
+[    1.682316] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    1.719266] EXT4-fs (mmcblk0p7): recovery complete
+[    1.721380] EXT4-fs (mmcblk0p7): mounted filesystem with ordered data mode. Opts: (null)
+[    1.728527] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[    1.913340] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+[    1.924888] brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM4345/6 wl0: Feb 27 2018 03:15:32 version 7.45.154 (r684107 CY) FWID 01-4fbe0b04
+[    1.928818] EXT4-fs (mmcblk0p8): recovery complete
+[    1.929968] EXT4-fs (mmcblk0p8): mounted filesystem with ordered data mode. Opts: (null)
+[    2.242913] Adding 496092k swap on /dev/zram0.  Priority:-2 extents:1 across:496092k SSFS
+[    3.290545] EXT4-fs (zram2): mounted filesystem without journal. Opts: nobarrier
+[    3.294975] EXT4-fs (zram1): mounted filesystem without journal. Opts: nobarrier
+[    3.378742] systemd-journald[111]: Received client request to flush runtime journal.
+[    3.391208] systemd-journald[111]: File /var/log/journal/70c04ec918f34df992c653286582305c/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[    4.147597] systemd-journald[111]: File /var/log/journal/70c04ec918f34df992c653286582305c/user-1008.journal corrupted or uncleanly shut down, renaming and replacing.
+[    4.243485] usb 1-1.3: USB disconnect, device number 3
+[    4.253127] uart-pl011 fe201000.serial: no DMA platform data
+[    4.345903] random: crng init done
+[    4.345927] random: 7 urandom warning(s) missed due to ratelimiting
+[    4.520631] systemd-journald[111]: Failed to read journal file /var/log/journal/70c04ec918f34df992c653286582305c/user-1002.journal for rotation, trying to move it out of the way: Device or resource busy
+[    4.539714] usb 1-1.3: new full-speed USB device number 4 using xhci_hcd
+[    4.598028] audit: type=1400 audit(1599990706.439:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="hassio-supervisor" pid=287 comm="apparmor_parser"
+[    4.598066] audit: type=1400 audit(1599990706.439:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="hassio-supervisor///usr/bin/gdbus" pid=287 comm="apparmor_parser"
+[    4.598090] audit: type=1400 audit(1599990706.439:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="hassio-supervisor///usr/bin/git" pid=287 comm="apparmor_parser"
+[    4.598112] audit: type=1400 audit(1599990706.439:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="hassio-supervisor///usr/bin/socat" pid=287 comm="apparmor_parser"
+[    4.598175] audit: type=1300 audit(1599990706.439:2): arch=40000028 syscall=4 per=800000 success=yes exit=54228 a0=6 a1=1fd2b98 a2=d3d4 a3=0 items=0 ppid=274 pid=287 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="apparmor_parser" exe="/usr/sbin/apparmor_parser" subj==unconfined key=(null)
+[    4.598236] audit: type=1327 audit(1599990706.439:2): proctitle=61707061726D6F725F706172736572002D72002D57002D4C002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F6361636865002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F68617373696F2D73757065727669736F72
+[    4.688615] usb 1-1.3: New USB device found, idVendor=1cf1, idProduct=0030, bcdDevice= 1.00
+[    4.688638] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    4.688651] usb 1-1.3: Product: ConBee II
+[    4.688662] usb 1-1.3: Manufacturer: dresden elektronik ingenieurtechnik GmbH
+[    4.688673] usb 1-1.3: SerialNumber: DE2191372
+[    4.691340] cdc_acm 1-1.3:1.0: ttyACM0: USB ACM device
+[    4.830030] Bluetooth: Core ver 2.22
+[    4.830093] NET: Registered protocol family 31
+[    4.830103] Bluetooth: HCI device and connection manager initialized
+[    4.830120] Bluetooth: HCI socket layer initialized
+[    4.830134] Bluetooth: L2CAP socket layer initialized
+[    4.830161] Bluetooth: SCO socket layer initialized
+[    4.837704] Bluetooth: HCI UART driver ver 2.3
+[    4.837725] Bluetooth: HCI UART protocol H4 registered
+[    4.837768] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[    4.837881] Bluetooth: HCI UART protocol Broadcom registered
+[    5.096316] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    5.096335] Bluetooth: BNEP filters: protocol multicast
+[    5.096352] Bluetooth: BNEP socket layer initialized
+[    5.114935] NET: Registered protocol family 38
+[    5.144569] cryptd: max_cpu_qlen set to 1000
+[    5.416804] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    5.417048] bcmgenet: Skipping UMAC reset
+[    5.519953] bcmgenet fd580000.genet: configuring instance for external RGMII (no delay)
+[    5.520351] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    5.532563] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[    5.557709] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[    5.557750] brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+[    6.082189] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[    6.082218] brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+[    6.199289] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[    6.569761] bcmgenet fd580000.genet eth0: Link is Down
+[   10.729786] bcmgenet fd580000.genet eth0: Link is Up - 1Gbps/Full - flow control off
+[   10.729817] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   15.212786] audit: type=1400 audit(1599990717.059:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="docker-default" pid=367 comm="apparmor_parser"
+[   15.212833] audit: type=1300 audit(1599990717.059:3): arch=40000028 syscall=4 per=800000 success=yes exit=7945 a0=4 a1=e20398 a2=1f09 a3=0 items=0 ppid=366 pid=367 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="apparmor_parser" exe="/usr/sbin/apparmor_parser" subj==unconfined key=(null)
+[   15.213279] audit: type=1327 audit(1599990717.059:3): proctitle=61707061726D6F725F706172736572002D4B72002F6D6E742F646174612F646F636B65722F746D702F646F636B65722D64656661756C74363032323832373537
+[   16.894493] audit: type=1325 audit(1599990718.739:4): table=nat family=2 entries=5
+[   16.894541] audit: type=1300 audit(1599990718.739:4): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=68e888 items=0 ppid=337 pid=389 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   16.894588] audit: type=1327 audit(1599990718.739:4): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4E00444F434B4552
+[   16.907568] audit: type=1325 audit(1599990718.749:5): table=filter family=2 entries=4
+[   16.907610] audit: type=1300 audit(1599990718.749:5): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=13bc778 items=0 ppid=337 pid=391 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   16.907657] audit: type=1327 audit(1599990718.749:5): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D740066696C746572002D4E00444F434B4552
+[   16.923966] audit: type=1325 audit(1599990718.769:6): table=filter family=2 entries=6
+[   16.985373] Initializing XFRM netlink socket
+[   17.167240] IPv6: ADDRCONF(NETDEV_UP): docker0: link is not ready
+[   17.335636] IPv6: ADDRCONF(NETDEV_UP): hassio: link is not ready
+[   20.026508] docker0: port 1(vethc5fb8ec) entered blocking state
+[   20.026534] docker0: port 1(vethc5fb8ec) entered disabled state
+[   20.026771] device vethc5fb8ec entered promiscuous mode
+[   20.027219] IPv6: ADDRCONF(NETDEV_UP): vethc5fb8ec: link is not ready
+[   20.076375] hassio: port 1(veth1105e5c) entered blocking state
+[   20.076415] hassio: port 1(veth1105e5c) entered disabled state
+[   20.076682] device veth1105e5c entered promiscuous mode
+[   20.077147] IPv6: ADDRCONF(NETDEV_UP): veth1105e5c: link is not ready
+[   20.077178] hassio: port 1(veth1105e5c) entered blocking state
+[   20.077199] hassio: port 1(veth1105e5c) entered forwarding state
+[   20.077514] hassio: port 1(veth1105e5c) entered disabled state
+[   20.368866] cgroup: cgroup: disabling cgroup2 socket matching due to net_prio or net_cls activation
+[   20.713351] eth0: renamed from veth10a7b5e
+[   20.750825] IPv6: ADDRCONF(NETDEV_CHANGE): vethc5fb8ec: link becomes ready
+[   20.750965] docker0: port 1(vethc5fb8ec) entered blocking state
+[   20.750990] docker0: port 1(vethc5fb8ec) entered forwarding state
+[   20.751190] IPv6: ADDRCONF(NETDEV_CHANGE): docker0: link becomes ready
+[   20.855306] kauditd_printk_skb: 146 callbacks suppressed
+[   20.855310] audit: type=1325 audit(1599990722.699:55): table=nat family=2 entries=0
+[   20.855357] audit: type=1300 audit(1599990722.699:55): arch=40000028 syscall=295 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=bebe2a40 items=0 ppid=653 pid=662 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   20.855389] audit: type=1327 audit(1599990722.699:55): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4C002D6E
+[   20.864787] audit: type=1325 audit(1599990722.709:56): table=filter family=2 entries=0
+[   20.864868] audit: type=1300 audit(1599990722.709:56): arch=40000028 syscall=295 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=bec00a50 items=0 ppid=653 pid=664 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   20.864924] audit: type=1327 audit(1599990722.709:56): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D4C002D6E
+[   20.880629] audit: type=1325 audit(1599990722.729:57): table=nat family=2 entries=5
+[   20.880740] audit: type=1300 audit(1599990722.729:57): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=f15888 items=0 ppid=653 pid=667 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   20.880822] audit: type=1327 audit(1599990722.729:57): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4E00444F434B45525F4F5554505554
+[   20.886818] audit: type=1325 audit(1599990722.729:58): table=nat family=2 entries=7
+[   21.003491] eth1: renamed from vethe1706d7
+[   21.050969] IPv6: ADDRCONF(NETDEV_CHANGE): veth1105e5c: link becomes ready
+[   21.051077] hassio: port 1(veth1105e5c) entered blocking state
+[   21.051095] hassio: port 1(veth1105e5c) entered forwarding state
+[   21.051224] IPv6: ADDRCONF(NETDEV_CHANGE): hassio: link becomes ready
+[   21.763597] udevd[202]: starting version 3.2.9
+[   21.787871] udevd[203]: starting eudev-3.2.9
+[   26.425188] kauditd_printk_skb: 20 callbacks suppressed
+[   26.425193] audit: type=1400 audit(1599990728.269:65): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="hassio-supervisor" pid=1048 comm="apparmor_parser"
+[   26.425227] audit: type=1400 audit(1599990728.269:65): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="hassio-supervisor///usr/bin/gdbus" pid=1048 comm="apparmor_parser"
+[   26.425250] audit: type=1400 audit(1599990728.269:65): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="hassio-supervisor///usr/bin/git" pid=1048 comm="apparmor_parser"
+[   26.425272] audit: type=1400 audit(1599990728.269:65): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="hassio-supervisor///usr/bin/socat" pid=1048 comm="apparmor_parser"
+[   26.425296] audit: type=1300 audit(1599990728.269:65): arch=40000028 syscall=4 per=800000 success=yes exit=54228 a0=6 a1=4f5b98 a2=d3d4 a3=0 items=0 ppid=1047 pid=1048 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="apparmor_parser" exe="/usr/sbin/apparmor_parser" subj==unconfined key=(null)
+[   26.425323] audit: type=1327 audit(1599990728.269:65): proctitle=61707061726D6F725F706172736572002D72002D57002D4C002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F6361636865002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F68617373696F2D73757065727669736F72
+[   27.212406] hassio: port 2(veth5d6d7b3) entered blocking state
+[   27.212433] hassio: port 2(veth5d6d7b3) entered disabled state
+[   27.212627] device veth5d6d7b3 entered promiscuous mode
+[   27.212770] audit: type=1700 audit(1599990729.059:66): dev=veth5d6d7b3 prom=256 old_prom=0 auid=4294967295 uid=0 gid=0 ses=4294967295
+[   27.212872] audit: type=1300 audit(1599990729.059:66): arch=40000028 syscall=290 per=800000 success=yes exit=40 a0=c a1=3e53dd0 a2=28 a3=0 items=0 ppid=1 pid=337 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="dockerd" exe="/usr/bin/dockerd" subj==unconfined key=(null)
+[   27.212971] audit: type=1327 audit(1599990729.059:66): proctitle=2F7573722F62696E2F646F636B657264002D480066643A2F2F002D2D73746F726167652D6472697665723D6F7665726C617932002D2D6C6F672D6472697665723D6A6F75726E616C64002D2D646174612D726F6F74002F6D6E742F646174612F646F636B6572
+[   27.213260] IPv6: ADDRCONF(NETDEV_UP): veth5d6d7b3: link is not ready
+[   27.711556] audit: type=1325 audit(1599990729.559:67): table=nat family=2 entries=0
+[   27.873617] eth0: renamed from veth90fc378
+[   27.921031] IPv6: ADDRCONF(NETDEV_CHANGE): veth5d6d7b3: link becomes ready
+[   27.921218] hassio: port 2(veth5d6d7b3) entered blocking state
+[   27.921248] hassio: port 2(veth5d6d7b3) entered forwarding state
+[   29.122077] hassio: port 3(veth47b7f15) entered blocking state
+[   29.122104] hassio: port 3(veth47b7f15) entered disabled state
+[   29.122310] device veth47b7f15 entered promiscuous mode
+[   29.122668] IPv6: ADDRCONF(NETDEV_UP): veth47b7f15: link is not ready
+[   29.923915] eth0: renamed from veth4c032ba
+[   29.991208] IPv6: ADDRCONF(NETDEV_CHANGE): veth47b7f15: link becomes ready
+[   29.991398] hassio: port 3(veth47b7f15) entered blocking state
+[   29.991428] hassio: port 3(veth47b7f15) entered forwarding state
+[   30.824123] hassio: port 4(vethc4bdd82) entered blocking state
+[   30.824147] hassio: port 4(vethc4bdd82) entered disabled state
+[   30.824416] device vethc4bdd82 entered promiscuous mode
+[   30.824910] IPv6: ADDRCONF(NETDEV_UP): vethc4bdd82: link is not ready
+[   31.500408] kauditd_printk_skb: 65 callbacks suppressed
+[   31.500411] audit: type=1325 audit(1599990733.349:89): table=nat family=2 entries=0
+[   31.500507] audit: type=1300 audit(1599990733.349:89): arch=40000028 syscall=295 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=beffea40 items=0 ppid=1783 pid=1801 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   31.500564] audit: type=1327 audit(1599990733.349:89): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4C002D6E
+[   31.510725] audit: type=1325 audit(1599990733.359:90): table=filter family=2 entries=0
+[   31.510774] audit: type=1300 audit(1599990733.359:90): arch=40000028 syscall=295 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=be816a50 items=0 ppid=1783 pid=1804 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   31.510828] audit: type=1327 audit(1599990733.359:90): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D4C002D6E
+[   31.530032] audit: type=1325 audit(1599990733.379:91): table=nat family=2 entries=5
+[   31.530398] audit: type=1300 audit(1599990733.379:91): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=1af888 items=0 ppid=1783 pid=1808 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   31.530443] audit: type=1327 audit(1599990733.379:91): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4E00444F434B45525F4F5554505554
+[   31.536062] audit: type=1325 audit(1599990733.379:92): table=nat family=2 entries=7
+[   31.651431] eth0: renamed from veth50d4c47
+[   31.741845] IPv6: ADDRCONF(NETDEV_CHANGE): vethc4bdd82: link becomes ready
+[   31.741979] hassio: port 4(vethc4bdd82) entered blocking state
+[   31.741997] hassio: port 4(vethc4bdd82) entered forwarding state
+[   34.495857] udevd[528]: starting version 3.2.9
+[   34.537432] udevd[529]: starting eudev-3.2.9
+[   34.988889] Bluetooth: RFCOMM TTY layer initialized
+[   34.988922] Bluetooth: RFCOMM socket layer initialized
+[   34.988945] Bluetooth: RFCOMM ver 1.11
+[   74.608069] kauditd_printk_skb: 20 callbacks suppressed
+[   74.608073] audit: type=1400 audit(1599990921.515:99): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="hassio-supervisor" pid=2606 comm="apparmor_parser"
+[   74.649863] audit: type=1300 audit(1599990921.515:99): arch=40000028 syscall=4 per=800000 success=yes exit=14169 a0=6 a1=1a35968 a2=3759 a3=0 items=0 ppid=2605 pid=2606 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="apparmor_parser" exe="/usr/sbin/apparmor_parser" subj==unconfined key=(null)
+[   74.650010] audit: type=1327 audit(1599990921.515:99): proctitle=61707061726D6F725F706172736572002D72002D57002D4C002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F6361636865002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F68617373696F2D73757065727669736F72
+[   74.651200] audit: type=1400 audit(1599990921.565:100): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="hassio-supervisor///usr/bin/gdbus" pid=2606 comm="apparmor_parser"
+[   74.651338] audit: type=1300 audit(1599990921.565:100): arch=40000028 syscall=4 per=800000 success=yes exit=11529 a0=6 a1=19d7898 a2=2d09 a3=0 items=0 ppid=2605 pid=2606 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="apparmor_parser" exe="/usr/sbin/apparmor_parser" subj==unconfined key=(null)
+[   74.651451] audit: type=1327 audit(1599990921.565:100): proctitle=61707061726D6F725F706172736572002D72002D57002D4C002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F6361636865002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F68617373696F2D73757065727669736F72
+[   74.652397] audit: type=1400 audit(1599990921.565:101): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="hassio-supervisor///usr/bin/git" pid=2606 comm="apparmor_parser"
+[   74.652526] audit: type=1300 audit(1599990921.565:101): arch=40000028 syscall=4 per=800000 success=yes exit=12089 a0=6 a1=19ab298 a2=2f39 a3=0 items=0 ppid=2605 pid=2606 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="apparmor_parser" exe="/usr/sbin/apparmor_parser" subj==unconfined key=(null)
+[   74.652639] audit: type=1327 audit(1599990921.565:101): proctitle=61707061726D6F725F706172736572002D72002D57002D4C002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F6361636865002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F68617373696F2D73757065727669736F72
+[   74.653745] audit: type=1400 audit(1599990921.565:102): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="hassio-supervisor///usr/bin/socat" pid=2606 comm="apparmor_parser"
+[   78.249549] docker0: port 1(vethc5fb8ec) entered disabled state
+[   78.250044] veth10a7b5e: renamed from eth0
+[   78.384522] docker0: port 1(vethc5fb8ec) entered disabled state
+[   78.385796] device vethc5fb8ec left promiscuous mode
+[   78.385832] docker0: port 1(vethc5fb8ec) entered disabled state
+[   78.467276] hassio: port 1(veth1105e5c) entered disabled state
+[   78.467680] vethe1706d7: renamed from eth1
+[   78.631613] hassio: port 1(veth1105e5c) entered disabled state
+[   78.632977] device veth1105e5c left promiscuous mode
+[   78.633010] hassio: port 1(veth1105e5c) entered disabled state
+[   85.888958] docker0: port 1(vethb2c55e1) entered blocking state
+[   85.888988] docker0: port 1(vethb2c55e1) entered disabled state
+[   85.889380] device vethb2c55e1 entered promiscuous mode
+[   85.889457] kauditd_printk_skb: 8 callbacks suppressed
+[   85.889461] audit: type=1700 audit(1599990932.795:105): dev=vethb2c55e1 prom=256 old_prom=0 auid=4294967295 uid=0 gid=0 ses=4294967295
+[   85.891162] audit: type=1300 audit(1599990932.795:105): arch=40000028 syscall=290 per=800000 success=yes exit=40 a0=c a1=403d290 a2=28 a3=0 items=0 ppid=1 pid=337 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="dockerd" exe="/usr/bin/dockerd" subj==unconfined key=(null)
+[   85.891217] audit: type=1327 audit(1599990932.795:105): proctitle=2F7573722F62696E2F646F636B657264002D480066643A2F2F002D2D73746F726167652D6472697665723D6F7665726C617932002D2D6C6F672D6472697665723D6A6F75726E616C64002D2D646174612D726F6F74002F6D6E742F646174612F646F636B6572
+[   85.893687] IPv6: ADDRCONF(NETDEV_UP): vethb2c55e1: link is not ready
+[   86.448164] eth0: renamed from veth0a9808f
+[   86.501135] IPv6: ADDRCONF(NETDEV_CHANGE): vethb2c55e1: link becomes ready
+[   86.501326] docker0: port 1(vethb2c55e1) entered blocking state
+[   86.501356] docker0: port 1(vethb2c55e1) entered forwarding state
+[   86.953242] udevd[199]: starting version 3.2.9
+[   86.958454] udevd[200]: starting eudev-3.2.9
+[   89.253209] hassio: port 1(veth2d6b2f5) entered blocking state
+[   89.253230] hassio: port 1(veth2d6b2f5) entered disabled state
+[   89.253512] device veth2d6b2f5 entered promiscuous mode
+[   89.253576] audit: type=1700 audit(1599990936.165:106): dev=veth2d6b2f5 prom=256 old_prom=0 auid=4294967295 uid=0 gid=0 ses=4294967295
+[   89.253847] audit: type=1300 audit(1599990936.165:106): arch=40000028 syscall=290 per=800000 success=yes exit=40 a0=c a1=3fefe90 a2=28 a3=0 items=0 ppid=1 pid=337 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="dockerd" exe="/usr/bin/dockerd" subj==unconfined key=(null)
+[   89.253889] audit: type=1327 audit(1599990936.165:106): proctitle=2F7573722F62696E2F646F636B657264002D480066643A2F2F002D2D73746F726167652D6472697665723D6F7665726C617932002D2D6C6F672D6472697665723D6A6F75726E616C64002D2D646174612D726F6F74002F6D6E742F646174612F646F636B6572
+[   89.254110] IPv6: ADDRCONF(NETDEV_UP): veth2d6b2f5: link is not ready
+[   89.374164] audit: type=1325 audit(1599990936.285:107): table=nat family=2 entries=0
+[   89.374200] audit: type=1300 audit(1599990936.285:107): arch=40000028 syscall=295 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=be812a40 items=0 ppid=3107 pid=3117 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[   89.374235] audit: type=1327 audit(1599990936.285:107): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4C002D6E
+[   89.383122] audit: type=1325 audit(1599990936.295:108): table=filter family=2 entries=0
+[   89.541050] eth1: renamed from vethc1b6a8e
+[   89.594518] IPv6: ADDRCONF(NETDEV_CHANGE): veth2d6b2f5: link becomes ready
+[   89.594700] hassio: port 1(veth2d6b2f5) entered blocking state
+[   89.594730] hassio: port 1(veth2d6b2f5) entered forwarding state
+[   92.135240] kauditd_printk_skb: 26 callbacks suppressed
+[   92.135244] audit: type=1400 audit(1599990939.045:117): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="hassio-supervisor" pid=3190 comm="apparmor_parser"
+[   92.200038] audit: type=1400 audit(1599990939.045:117): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="hassio-supervisor///usr/bin/gdbus" pid=3190 comm="apparmor_parser"
+[   92.200086] audit: type=1400 audit(1599990939.045:117): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="hassio-supervisor///usr/bin/git" pid=3190 comm="apparmor_parser"
+[   92.200123] audit: type=1400 audit(1599990939.045:117): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="hassio-supervisor///usr/bin/socat" pid=3190 comm="apparmor_parser"
+[   92.200160] audit: type=1300 audit(1599990939.045:117): arch=40000028 syscall=4 per=800000 success=yes exit=54228 a0=6 a1=9d9b98 a2=d3d4 a3=0 items=0 ppid=3189 pid=3190 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="apparmor_parser" exe="/usr/sbin/apparmor_parser" subj==unconfined key=(null)
+[   92.200216] audit: type=1327 audit(1599990939.045:117): proctitle=61707061726D6F725F706172736572002D72002D57002D4C002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F6361636865002F6D6E742F646174612F73757065727669736F722F61707061726D6F722F68617373696F2D73757065727669736F72
+[   96.039082] hassio: port 2(veth5d6d7b3) entered disabled state
+[   96.039333] veth90fc378: renamed from eth0
+[   96.191386] hassio: port 2(veth5d6d7b3) entered disabled state
+[   96.193714] device veth5d6d7b3 left promiscuous mode
+[   96.193750] hassio: port 2(veth5d6d7b3) entered disabled state
+[   96.193778] audit: type=1700 audit(1599990943.085:118): dev=veth5d6d7b3 prom=0 old_prom=256 auid=4294967295 uid=0 gid=0 ses=4294967295
+[   96.280089] audit: type=1300 audit(1599990943.085:118): arch=40000028 syscall=290 per=800000 success=yes exit=32 a0=c a1=4207de0 a2=20 a3=0 items=0 ppid=1 pid=337 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="dockerd" exe="/usr/bin/dockerd" subj==unconfined key=(null)
+[   96.280182] audit: type=1327 audit(1599990943.085:118): proctitle=2F7573722F62696E2F646F636B657264002D480066643A2F2F002D2D73746F726167652D6472697665723D6F7665726C617932002D2D6C6F672D6472697665723D6A6F75726E616C64002D2D646174612D726F6F74002F6D6E742F646174612F646F636B6572
+[   96.433373] hassio: port 2(veth6f47ab5) entered blocking state
+[   96.433402] hassio: port 2(veth6f47ab5) entered disabled state
+[   96.433650] device veth6f47ab5 entered promiscuous mode
+[   96.433731] audit: type=1700 audit(1599990943.345:119): dev=veth6f47ab5 prom=256 old_prom=0 auid=4294967295 uid=0 gid=0 ses=4294967295
+[   96.434028] IPv6: ADDRCONF(NETDEV_UP): veth6f47ab5: link is not ready
+[   96.434055] hassio: port 2(veth6f47ab5) entered blocking state
+[   96.434073] hassio: port 2(veth6f47ab5) entered forwarding state
+[   97.039879] hassio: port 2(veth6f47ab5) entered disabled state
+[   97.122659] eth0: renamed from veth2bb0556
+[   97.161229] IPv6: ADDRCONF(NETDEV_CHANGE): veth6f47ab5: link becomes ready
+[   97.161420] hassio: port 2(veth6f47ab5) entered blocking state
+[   97.161451] hassio: port 2(veth6f47ab5) entered forwarding state
+[  102.580655] hassio: port 5(veth7aa79b4) entered blocking state
+[  102.580686] hassio: port 5(veth7aa79b4) entered disabled state
+[  102.580917] device veth7aa79b4 entered promiscuous mode
+[  102.580979] kauditd_printk_skb: 32 callbacks suppressed
+[  102.580984] audit: type=1700 audit(1599990949.495:130): dev=veth7aa79b4 prom=256 old_prom=0 auid=4294967295 uid=0 gid=0 ses=4294967295
+[  102.581100] audit: type=1300 audit(1599990949.495:130): arch=40000028 syscall=290 per=800000 success=yes exit=40 a0=c a1=3e53a40 a2=28 a3=0 items=0 ppid=1 pid=337 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="dockerd" exe="/usr/bin/dockerd" subj==unconfined key=(null)
+[  102.581148] audit: type=1327 audit(1599990949.495:130): proctitle=2F7573722F62696E2F646F636B657264002D480066643A2F2F002D2D73746F726167652D6472697665723D6F7665726C617932002D2D6C6F672D6472697665723D6A6F75726E616C64002D2D646174612D726F6F74002F6D6E742F646174612F646F636B6572
+[  102.581292] IPv6: ADDRCONF(NETDEV_UP): veth7aa79b4: link is not ready
+[  102.639514] audit: type=1325 audit(1599990949.545:131): table=nat family=2 entries=13
+[  102.640306] audit: type=1300 audit(1599990949.545:131): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=181c50 items=0 ppid=337 pid=3536 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  102.640373] audit: type=1327 audit(1599990949.545:131): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4100444F434B4552002D7000746370002D6400302F30002D2D64706F72740034333537002D6A00444E4154002D2D746F2D64657374696E6174696F6E003137322E33302E33322E363A38300000002D690068617373696F
+[  102.664108] audit: type=1325 audit(1599990949.575:132): table=filter family=2 entries=29
+[  102.664512] audit: type=1300 audit(1599990949.575:132): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=1b7c118 items=0 ppid=337 pid=3538 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  102.664562] audit: type=1327 audit(1599990949.575:132): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D740066696C746572002D4100444F434B45520000002D690068617373696F002D6F0068617373696F002D7000746370002D64003137322E33302E33322E36002D2D64706F7274003830002D6A00414343455054
+[  102.685254] audit: type=1325 audit(1599990949.595:133): table=nat family=2 entries=14
+[  103.403441] eth0: renamed from veth589e009
+[  103.451004] IPv6: ADDRCONF(NETDEV_CHANGE): veth7aa79b4: link becomes ready
+[  103.451179] hassio: port 5(veth7aa79b4) entered blocking state
+[  103.451208] hassio: port 5(veth7aa79b4) entered forwarding state
+[  111.538679] hassio: port 6(veth3400d91) entered blocking state
+[  111.538705] hassio: port 6(veth3400d91) entered disabled state
+[  111.538971] device veth3400d91 entered promiscuous mode
+[  111.539088] kauditd_printk_skb: 32 callbacks suppressed
+[  111.539091] audit: type=1700 audit(1599990958.445:144): dev=veth3400d91 prom=256 old_prom=0 auid=4294967295 uid=0 gid=0 ses=4294967295
+[  111.539239] audit: type=1300 audit(1599990958.445:144): arch=40000028 syscall=290 per=800000 success=yes exit=40 a0=c a1=3aadc20 a2=28 a3=0 items=0 ppid=1 pid=337 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="dockerd" exe="/usr/bin/dockerd" subj==unconfined key=(null)
+[  111.539292] audit: type=1327 audit(1599990958.445:144): proctitle=2F7573722F62696E2F646F636B657264002D480066643A2F2F002D2D73746F726167652D6472697665723D6F7665726C617932002D2D6C6F672D6472697665723D6A6F75726E616C64002D2D646174612D726F6F74002F6D6E742F646174612F646F636B6572
+[  111.539592] IPv6: ADDRCONF(NETDEV_UP): veth3400d91: link is not ready
+[  111.601549] audit: type=1325 audit(1599990958.515:145): table=nat family=2 entries=15
+[  111.601587] audit: type=1300 audit(1599990958.515:145): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=aa7040 items=0 ppid=337 pid=4358 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  111.601620] audit: type=1327 audit(1599990958.515:145): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4100444F434B4552002D7000746370002D6400302F30002D2D64706F7274003232002D6A00444E4154002D2D746F2D64657374696E6174696F6E003137322E33302E33332E303A32320000002D690068617373696F
+[  111.620305] audit: type=1325 audit(1599990958.535:146): table=filter family=2 entries=30
+[  111.620347] audit: type=1300 audit(1599990958.535:146): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=11712d8 items=0 ppid=337 pid=4360 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  111.620381] audit: type=1327 audit(1599990958.535:146): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D740066696C746572002D4100444F434B45520000002D690068617373696F002D6F0068617373696F002D7000746370002D64003137322E33302E33332E30002D2D64706F7274003232002D6A00414343455054
+[  111.637763] audit: type=1325 audit(1599990958.545:147): table=nat family=2 entries=16
+[  112.263337] eth0: renamed from vethe4956a4
+[  112.321082] IPv6: ADDRCONF(NETDEV_CHANGE): veth3400d91: link becomes ready
+[  112.321247] hassio: port 6(veth3400d91) entered blocking state
+[  112.321271] hassio: port 6(veth3400d91) entered forwarding state
+[  113.618337] hassio: port 7(vethb487ec3) entered blocking state
+[  113.618364] hassio: port 7(vethb487ec3) entered disabled state
+[  113.618578] device vethb487ec3 entered promiscuous mode
+[  113.618987] IPv6: ADDRCONF(NETDEV_UP): vethb487ec3: link is not ready
+[  114.671123] eth0: renamed from veth91291c0
+[  114.721344] IPv6: ADDRCONF(NETDEV_CHANGE): vethb487ec3: link becomes ready
+[  114.721450] hassio: port 7(vethb487ec3) entered blocking state
+[  114.721461] hassio: port 7(vethb487ec3) entered forwarding state
+[  121.382273] udevd[190]: starting version 3.2.9
+[  121.412730] udevd[191]: starting eudev-3.2.9
+[  123.924879] kauditd_printk_skb: 74 callbacks suppressed
+[  123.924883] audit: type=1701 audit(1599990970.835:172): auid=4294967295 uid=0 gid=0 ses=4294967295 subj==unconfined pid=6690 comm="wmiir" exe="/usr/bin/wmiir" sig=11 res=1
+[  157.297888] hassio: port 8(veth98608f7) entered blocking state
+[  157.297922] hassio: port 8(veth98608f7) entered disabled state
+[  157.298169] device veth98608f7 entered promiscuous mode
+[  157.298266] audit: type=1700 audit(1599991004.204:173): dev=veth98608f7 prom=256 old_prom=0 auid=4294967295 uid=0 gid=0 ses=4294967295
+[  157.302297] audit: type=1300 audit(1599991004.204:173): arch=40000028 syscall=290 per=800000 success=yes exit=40 a0=c a1=420ffb0 a2=28 a3=0 items=0 ppid=1 pid=337 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="dockerd" exe="/usr/bin/dockerd" subj==unconfined key=(null)
+[  157.302341] audit: type=1327 audit(1599991004.204:173): proctitle=2F7573722F62696E2F646F636B657264002D480066643A2F2F002D2D73746F726167652D6472697665723D6F7665726C617932002D2D6C6F672D6472697665723D6A6F75726E616C64002D2D646174612D726F6F74002F6D6E742F646174612F646F636B6572
+[  157.302469] IPv6: ADDRCONF(NETDEV_UP): veth98608f7: link is not ready
+[  157.369296] audit: type=1325 audit(1599991004.274:174): table=nat family=2 entries=19
+[  157.369791] audit: type=1300 audit(1599991004.274:174): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=102e820 items=0 ppid=337 pid=7258 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  157.370440] audit: type=1327 audit(1599991004.274:174): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4100444F434B4552002D7000746370002D6400302F30002D2D64706F72740031363237002D6A00444E4154002D2D746F2D64657374696E6174696F6E003137322E33302E33332E323A313632370000002D690068617373696F
+[  157.386737] audit: type=1325 audit(1599991004.294:175): table=filter family=2 entries=32
+[  157.386771] audit: type=1300 audit(1599991004.294:175): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=10d2658 items=0 ppid=337 pid=7260 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  157.386804] audit: type=1327 audit(1599991004.294:175): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D740066696C746572002D4100444F434B45520000002D690068617373696F002D6F0068617373696F002D7000746370002D64003137322E33302E33332E32002D2D64706F72740031363237002D6A00414343455054
+[  157.403002] audit: type=1325 audit(1599991004.314:176): table=nat family=2 entries=20
+[  158.075143] eth0: renamed from vethe395a76
+[  158.122347] IPv6: ADDRCONF(NETDEV_CHANGE): veth98608f7: link becomes ready
+[  158.122484] hassio: port 8(veth98608f7) entered blocking state
+[  158.122502] hassio: port 8(veth98608f7) entered forwarding state
+[  176.694254] kauditd_printk_skb: 32 callbacks suppressed
+[  176.694259] audit: type=1325 audit(1599991023.604:187): table=nat family=2 entries=21
+[  176.694806] audit: type=1300 audit(1599991023.604:187): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=199cd08 items=0 ppid=337 pid=7456 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  176.695656] audit: type=1327 audit(1599991023.604:187): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4400444F434B4552002D7000746370002D6400302F30002D2D64706F72740035393030002D6A00444E4154002D2D746F2D64657374696E6174696F6E003137322E33302E33332E313A353930300000002D690068617373696F
+[  176.717550] audit: type=1325 audit(1599991023.624:188): table=filter family=2 entries=33
+[  176.718034] audit: type=1300 audit(1599991023.624:188): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=177c8e8 items=0 ppid=337 pid=7458 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  176.718415] audit: type=1327 audit(1599991023.624:188): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D740066696C746572002D4400444F434B45520000002D690068617373696F002D6F0068617373696F002D7000746370002D64003137322E33302E33332E31002D2D64706F72740035393030002D6A00414343455054
+[  176.738789] audit: type=1325 audit(1599991023.644:189): table=nat family=2 entries=20
+[  176.738834] audit: type=1300 audit(1599991023.644:189): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=8a0ab0 items=0 ppid=337 pid=7460 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  176.738882] audit: type=1327 audit(1599991023.644:189): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4400504F5354524F5554494E47002D7000746370002D73003137322E33302E33332E31002D64003137322E33302E33332E31002D2D64706F72740035393030002D6A004D415351554552414445
+[  176.770750] hassio: port 7(vethb487ec3) entered disabled state
+[  176.771020] veth91291c0: renamed from eth0
+[  176.903270] hassio: port 7(vethb487ec3) entered disabled state
+[  176.905932] device vethb487ec3 left promiscuous mode
+[  176.905969] hassio: port 7(vethb487ec3) entered disabled state
+[  176.905995] audit: type=1700 audit(1599991023.794:190): dev=vethb487ec3 prom=0 old_prom=256 auid=4294967295 uid=0 gid=0 ses=4294967295
+[  182.417393] hassio: port 7(veth5332831) entered blocking state
+[  182.417423] hassio: port 7(veth5332831) entered disabled state
+[  182.417638] device veth5332831 entered promiscuous mode
+[  182.418000] IPv6: ADDRCONF(NETDEV_UP): veth5332831: link is not ready
+[  182.429077] kauditd_printk_skb: 2 callbacks suppressed
+[  182.429083] audit: type=1700 audit(1599991029.324:191): dev=veth5332831 prom=256 old_prom=0 auid=4294967295 uid=0 gid=0 ses=4294967295
+[  182.429134] audit: type=1300 audit(1599991029.324:191): arch=40000028 syscall=290 per=800000 success=yes exit=40 a0=c a1=4760300 a2=28 a3=0 items=0 ppid=1 pid=337 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="dockerd" exe="/usr/bin/dockerd" subj==unconfined key=(null)
+[  182.429184] audit: type=1327 audit(1599991029.324:191): proctitle=2F7573722F62696E2F646F636B657264002D480066643A2F2F002D2D73746F726167652D6472697665723D6F7665726C617932002D2D6C6F672D6472697665723D6A6F75726E616C64002D2D646174612D726F6F74002F6D6E742F646174612F646F636B6572
+[  182.476069] audit: type=1325 audit(1599991029.384:192): table=nat family=2 entries=19
+[  182.476106] audit: type=1300 audit(1599991029.384:192): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=e8f820 items=0 ppid=337 pid=7478 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  182.476138] audit: type=1327 audit(1599991029.384:192): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D74006E6174002D4100444F434B4552002D7000746370002D6400302F30002D2D64706F72740035393030002D6A00444E4154002D2D746F2D64657374696E6174696F6E003137322E33302E33332E313A353930300000002D690068617373696F
+[  182.497039] audit: type=1325 audit(1599991029.404:193): table=filter family=2 entries=32
+[  182.497083] audit: type=1300 audit(1599991029.404:193): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=1313658 items=0 ppid=337 pid=7480 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" subj==unconfined key=(null)
+[  182.497131] audit: type=1327 audit(1599991029.404:193): proctitle=2F7573722F7362696E2F69707461626C6573002D2D77616974002D740066696C746572002D4100444F434B45520000002D690068617373696F002D6F0068617373696F002D7000746370002D64003137322E33302E33332E31002D2D64706F72740035393030002D6A00414343455054
+[  182.518323] audit: type=1325 audit(1599991029.424:194): table=nat family=2 entries=20
+[  183.173447] eth0: renamed from veth8d37275
+[  183.221067] IPv6: ADDRCONF(NETDEV_CHANGE): veth5332831: link becomes ready
+[  183.221270] hassio: port 7(veth5332831) entered blocking state
+[  183.221301] hassio: port 7(veth5332831) entered forwarding state
+[  189.291653] kauditd_printk_skb: 32 callbacks suppressed
+[  189.291658] audit: type=1701 audit(1599991036.204:205): auid=4294967295 uid=0 gid=0 ses=4294967295 subj==unconfined pid=8525 comm="wmiir" exe="/usr/bin/wmiir" sig=11 res=1

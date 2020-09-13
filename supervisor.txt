@@ -1,0 +1,92 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] udev.sh: executing... 
+[09:55:33] INFO: Update udev information
+[cont-init.d] udev.sh: exited 0.
+[cont-init.d] done.
+[services.d] starting services
+[services.d] done.
+[09:55:34] INFO: Start local supervisor watchdog...
+20-09-13 09:55:35 INFO (MainThread) [__main__] Initialize Supervisor setup
+20-09-13 09:55:36 INFO (MainThread) [supervisor.bootstrap] Initialize Supervisor Sentry
+20-09-13 09:55:36 INFO (MainThread) [supervisor.bootstrap] Create Supervisor media folder /data/media
+20-09-13 09:55:36 INFO (MainThread) [supervisor.bootstrap] Setup coresys for machine: raspberrypi4
+20-09-13 09:55:36 INFO (SyncWorker_0) [supervisor.docker.supervisor] Attach to Supervisor homeassistant/armv7-hassio-supervisor with version 243
+20-09-13 09:55:36 INFO (SyncWorker_0) [supervisor.docker.supervisor] Connect Supervisor to hassio Network
+20-09-13 09:55:36 INFO (SyncWorker_0) [supervisor.docker.interface] Cleanup images: ['homeassistant/armv7-hassio-supervisor:242']
+20-09-13 09:55:37 INFO (MainThread) [__main__] Setup Supervisor
+20-09-13 09:55:38 INFO (MainThread) [supervisor.host.info] Update local host information
+20-09-13 09:55:38 INFO (MainThread) [supervisor.host.services] Update service information
+20-09-13 09:55:38 INFO (MainThread) [supervisor.host.network] Update local network information
+20-09-13 09:55:38 INFO (MainThread) [supervisor.host.sound] Update PulseAudio information
+Failed to load cookie file from cookie: No such file or directory
+20-09-13 09:55:38 INFO (MainThread) [supervisor.host.apparmor] Load AppArmor Profiles: {'hassio-supervisor'}
+20-09-13 09:55:38 INFO (MainThread) [supervisor.host.services] Reload local service hassos-apparmor.service
+20-09-13 09:55:39 INFO (SyncWorker_0) [supervisor.docker.interface] Attach to homeassistant/armv7-hassio-dns with version 9
+20-09-13 09:55:39 INFO (MainThread) [supervisor.plugins.dns] Restart CoreDNS plugin
+20-09-13 09:55:39 INFO (SyncWorker_0) [supervisor.docker.interface] Restart homeassistant/armv7-hassio-dns
+20-09-13 09:55:44 INFO (MainThread) [supervisor.plugins.dns] Updated /etc/resolv.conf
+20-09-13 09:55:44 INFO (SyncWorker_0) [supervisor.docker.interface] Attach to homeassistant/armv7-hassio-audio with version 17
+20-09-13 09:55:44 INFO (SyncWorker_0) [supervisor.docker.interface] Attach to homeassistant/armv7-hassio-cli with version 26
+20-09-13 09:55:44 INFO (MainThread) [supervisor.plugins.observer] No observer plugin Docker image homeassistant/armv7-hassio-observer found.
+20-09-13 09:55:44 INFO (MainThread) [supervisor.plugins.observer] Setup observer plugin
+20-09-13 09:55:44 INFO (MainThread) [supervisor.updater] Fetch update data from https://version.home-assistant.io/stable.json
+20-09-13 09:55:44 INFO (SyncWorker_0) [supervisor.docker.interface] Pull image homeassistant/armv7-hassio-observer tag 3.
+20-09-13 09:55:48 INFO (MainThread) [supervisor.plugins.observer] observer plugin now installed
+20-09-13 09:55:48 INFO (MainThread) [supervisor.plugins.observer] Start observer plugin
+20-09-13 09:55:50 INFO (SyncWorker_0) [supervisor.docker.observer] Start Observer homeassistant/armv7-hassio-observer with version 3 - 172.30.32.6
+20-09-13 09:55:50 INFO (SyncWorker_0) [supervisor.docker.interface] Attach to homeassistant/armv7-hassio-multicast with version 3
+20-09-13 09:55:50 INFO (MainThread) [supervisor.plugins.multicast] Restart Multicast plugin
+20-09-13 09:55:50 INFO (SyncWorker_0) [supervisor.docker.interface] Restart homeassistant/armv7-hassio-multicast
+20-09-13 09:55:54 INFO (SyncWorker_1) [supervisor.docker.interface] Attach to homeassistant/raspberrypi4-homeassistant with version 0.114.4
+20-09-13 09:55:54 INFO (MainThread) [supervisor.homeassistant.secrets] Load Home Assistant secrets: 5
+20-09-13 09:55:54 INFO (MainThread) [supervisor.hassos] Detect HassOS 4.13 / BootSlot B
+20-09-13 09:55:55 INFO (MainThread) [supervisor.store.git] Load add-on /data/addons/git/a0d7b954 repository
+20-09-13 09:55:55 INFO (MainThread) [supervisor.store.git] Load add-on /data/addons/git/cebe7a76 repository
+20-09-13 09:55:55 INFO (MainThread) [supervisor.store.git] Load add-on /data/addons/core repository
+20-09-13 09:55:55 INFO (MainThread) [supervisor.store] Load add-ons from store: 67 all - 67 new - 0 remove
+20-09-13 09:55:55 INFO (MainThread) [supervisor.addons] Found 5 installed add-ons
+20-09-13 09:55:55 INFO (SyncWorker_1) [supervisor.docker.interface] Attach to homeassistant/armhf-addon-deconz with version 6.2.3
+20-09-13 09:55:55 INFO (SyncWorker_4) [supervisor.docker.interface] Attach to homeassistant/armv7-addon-samba with version 9.2.0
+20-09-13 09:55:55 INFO (SyncWorker_0) [supervisor.docker.interface] Attach to homeassistant/armv7-addon-configurator with version 5.0.0
+20-09-13 09:55:55 INFO (SyncWorker_3) [supervisor.docker.interface] Attach to homeassistant/armv7-addon-ssh with version 8.8.0
+20-09-13 09:55:55 INFO (SyncWorker_2) [supervisor.docker.interface] Attach to sabeechen/hassio-google-drive-backup-armv7 with version 3.12
+20-09-13 09:55:55 INFO (MainThread) [supervisor.snapshots] Found 1 snapshot files
+20-09-13 09:55:55 INFO (MainThread) [supervisor.discovery] Load 1 messages
+20-09-13 09:55:55 INFO (MainThread) [supervisor.ingress] Load 8 ingress session
+20-09-13 09:55:55 INFO (MainThread) [__main__] Run Supervisor
+20-09-13 09:55:55 INFO (MainThread) [supervisor.api] Start API on 172.30.32.2
+20-09-13 09:55:55 INFO (MainThread) [supervisor.hassos] Rauc: B - marked slot kernel.1 as good
+20-09-13 09:55:55 INFO (MainThread) [supervisor.addons] Phase 'AddonStartup.INITIALIZE' start 0 add-ons
+20-09-13 09:55:55 INFO (MainThread) [supervisor.addons] Phase 'AddonStartup.SYSTEM' start 0 add-ons
+20-09-13 09:55:55 INFO (MainThread) [supervisor.addons] Phase 'AddonStartup.SERVICES' start 3 add-ons
+20-09-13 09:55:57 INFO (SyncWorker_4) [supervisor.docker.addon] Start Docker add-on homeassistant/armv7-addon-samba with version 9.2.0
+20-09-13 09:55:59 INFO (SyncWorker_3) [supervisor.docker.addon] Start Docker add-on homeassistant/armv7-addon-ssh with version 8.8.0
+20-09-13 09:55:59 WARNING (MainThread) [supervisor.addons.validate] Unknown options vnc_password
+20-09-13 09:56:01 INFO (SyncWorker_0) [supervisor.docker.addon] Start Docker add-on homeassistant/armhf-addon-deconz with version 6.2.3
+20-09-13 09:56:06 INFO (SyncWorker_3) [supervisor.docker.interface] Start homeassistant
+20-09-13 09:56:07 INFO (MainThread) [supervisor.homeassistant.core] Wait until Home Assistant is ready
+20-09-13 09:56:28 INFO (MainThread) [supervisor.homeassistant.api] Updated Home Assistant API token
+20-09-13 09:56:43 INFO (MainThread) [supervisor.homeassistant.core] Detect a running Home Assistant instance
+20-09-13 09:56:43 INFO (MainThread) [supervisor.addons] Phase 'AddonStartup.APPLICATION' start 1 add-ons
+20-09-13 09:56:45 INFO (SyncWorker_1) [supervisor.docker.addon] Start Docker add-on sabeechen/hassio-google-drive-backup-armv7 with version 3.12
+20-09-13 09:56:48 INFO (MainThread) [supervisor.api.security] /homeassistant/info access from cebe7a76_hassio_google_drive_backup
+20-09-13 09:56:48 INFO (MainThread) [supervisor.api.security] /supervisor/info access from cebe7a76_hassio_google_drive_backup
+20-09-13 09:56:48 INFO (MainThread) [supervisor.api.security] /snapshots access from cebe7a76_hassio_google_drive_backup
+20-09-13 09:56:48 INFO (MainThread) [supervisor.api.security] /snapshots/d51cc2a8/info access from cebe7a76_hassio_google_drive_backup
+20-09-13 09:56:50 INFO (MainThread) [supervisor.misc.tasks] All core tasks are scheduled
+20-09-13 09:56:50 INFO (MainThread) [supervisor.misc.hwmon] Started Supervisor hardware monitor
+20-09-13 09:56:50 INFO (MainThread) [supervisor.core] Supervisor is up and running
+20-09-13 09:56:50 INFO (MainThread) [supervisor.host.info] Update local host information
+20-09-13 09:56:50 INFO (MainThread) [supervisor.updater] Fetch update data from https://version.home-assistant.io/stable.json
+20-09-13 09:56:50 INFO (MainThread) [supervisor.host.services] Update service information
+20-09-13 09:56:51 INFO (MainThread) [supervisor.host.network] Update local network information
+20-09-13 09:56:51 INFO (MainThread) [supervisor.host.sound] Update PulseAudio information
+Failed to load cookie file from cookie: No such file or directory
+20-09-13 09:56:58 INFO (SyncWorker_0) [supervisor.docker.interface] Stop addon_core_deconz application
+20-09-13 09:57:04 INFO (SyncWorker_0) [supervisor.docker.interface] Clean addon_core_deconz application
+20-09-13 09:57:08 WARNING (MainThread) [supervisor.addons.validate] Unknown options vnc_password
+20-09-13 09:57:10 INFO (SyncWorker_4) [supervisor.docker.addon] Start Docker add-on homeassistant/armhf-addon-deconz with version 6.2.3
